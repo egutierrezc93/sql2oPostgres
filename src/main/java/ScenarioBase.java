@@ -12,6 +12,18 @@ public class ScenarioBase implements Serializable {
     private Date date_created;
     private String assigned;
 
+    @Override
+    public String toString() {
+        return "ScenarioBase{" +
+                "id=" + id +
+                ", code='" + code + '\'' +
+                ", target_id=" + target_id +
+                ", description='" + description + '\'' +
+                ", test_definition='" + test_definition + '\'' +
+                ", date_created=" + date_created +
+                ", assigned='" + assigned + '\'' +
+                '}';
+    }
 }
 
 

@@ -19,7 +19,7 @@ drop table IF EXISTS tns_scenario_code_performance CASCADE;
 
 
 --create table tns_scenario_base -------------------------------------------------------------
-CREATE TABLE public.tns_scenario_base(
+CREATE TABLE tns_scenario_base(
 	id int4 NOT NULL,
 	code varchar(512) NOT NULL,
 	target_id int4 NOT NULL,

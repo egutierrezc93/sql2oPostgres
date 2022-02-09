@@ -8,7 +8,7 @@ public class ConnectionJDBC {
 
     public static void main(String[] args) throws SQLException {
 
-        Sql2o sql2o = new Sql2o("jdbc:postgresql://localhost:5432/postgres",
+        Sql2o sql2o = new Sql2o("jdbc:postgresql://localhost:5432/bd_prueba",
                 "admin", "admin123");
         Connection connection = null;
         try {
@@ -22,11 +22,13 @@ public class ConnectionJDBC {
             System.out.println("No se pudo conectar" + e);
         }
         try {
-            String sql = "SELECT * FROM producto;";
+            String sql = "SELECT * FROM tns_scenario_base;";
 
-            List<Producto> result = connection
+            List<ScenarioBase> result = connection
                     .createQuery(sql)
-                    .executeAndFetch(Producto.class);
+                    .executeAndFetch(ScenarioBase.class);
+
+            System.out.println(result.size());
 
             result.forEach(System.out::println);
 
